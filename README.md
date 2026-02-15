@@ -6,7 +6,7 @@
 
 A beautiful, highly customizable circular progress bar control for .NET MAUI applications with multiple shape options, custom colors, and smooth rendering.
 
-![Circular Progress Bar Demo](https://your-image-url.com/demo.png)
+![Circular Progress Bar Demo](Assets/demo.png)
 
 ## ✨ Features
 
@@ -112,7 +112,7 @@ Ideal for gauges, speedometers, and dashboard displays.
     ProgressColor="#FB923C"
     ProgressLeftColor="#FED7AA"
     Size="150"
-    Thickness="12"
+    Thickness="13"
     ProgressEdgeShape="Round" />
 ```
 

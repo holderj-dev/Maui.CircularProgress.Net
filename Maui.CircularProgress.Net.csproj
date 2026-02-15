@@ -32,8 +32,8 @@
 		<PackageTags>maui;dotnet;circularprogressbar;progressbar;ui;controls;chart;donut;gauge;circular;maui-controls;netmaui;progress;visualization;net10</PackageTags>
 
 		<!-- Package URLs -->
-		<PackageProjectUrl>https://github.com/yourusername/Maui.CircularProgress.Net</PackageProjectUrl>
-		<RepositoryUrl>https://github.com/yourusername/Maui.CircularProgress.Net</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/holderj-dev/Maui.CircularProgress.Net</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/holderj-dev/Maui.CircularProgress.Net</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 
