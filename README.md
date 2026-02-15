@@ -6,6 +6,10 @@
 
 A beautiful, highly customizable circular progress bar control for .NET MAUI applications with multiple shape options, custom colors, and smooth rendering.
 
+##  Icon
+![Circular Progress Bar Icon](Assets/icon.png)
+
+##  Banner
 ![Circular Progress Bar Demo](Assets/banner.png)
 
 ## ✨ Features
