@@ -23,6 +23,7 @@
 
 		<!-- NuGet Package Metadata -->
 		<PackageId>Control.MauiCircularProgressView.Net</PackageId>
+		
 		<Version>1.0.0</Version>
 		<Authors>James Esil Holder</Authors>
 		<Company>James Esil Holder</Company>
