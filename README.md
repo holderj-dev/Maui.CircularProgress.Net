@@ -367,12 +367,6 @@ public void UpdateProgressColor(int progress)
 - Use proper color formats: `Colors.Blue` or `Color.FromArgb("#3B82F6")`
 - Check for typos in color names
 
-## 💻 System Requirements
-
-- .NET 10.0 or later
-- .NET MAUI workload installed
-- Visual Studio 2022 17.8+ or Visual Studio Code with C# Dev Kit
-
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
@@ -401,10 +395,10 @@ If you find this library helpful, please consider:
 
 ## 📊 Stats
 
-![GitHub stars](https://img.shields.io/github/stars/yourusername/Maui.CircularProgress.Net?style=social)
-![GitHub forks](https://img.shields.io/github/forks/yourusername/Maui.CircularProgress.Net?style=social)
-![GitHub issues](https://img.shields.io/github/issues/yourusername/Maui.CircularProgress.Net)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/yourusername/Maui.CircularProgress.Net)
+![GitHub stars](https://img.shields.io/github/stars/holderj-dev/Maui.CircularProgress.Net?style=social)
+![GitHub forks](https://img.shields.io/github/forks/holderj-dev/Maui.CircularProgress.Net?style=social)
+![GitHub issues](https://img.shields.io/github/issues/holderj-dev/Maui.CircularProgress.Net)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/holderj-dev/Maui.CircularProgress.Net)
 
 ---
 
