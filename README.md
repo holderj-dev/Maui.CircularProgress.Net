@@ -1,7 +1,7 @@
 # Circular Progress Bar for .NET MAUI
 
-[![NuGet](https://img.shields.io/nuget/v/Maui.CircularProgress.Net.svg)](https://www.nuget.org/packages/Maui.CircularProgress.Net/)
-[![NuGet Downloads](https://img.shields.io/nuget/dt/Maui.CircularProgress.Net.svg)](https://www.nuget.org/packages/Maui.CircularProgress.Net/)
+[![NuGet](https://img.shields.io/nuget/v/Maui.CircularProgress.Net.svg)](https://www.nuget.org/packages/Control.MauiCircularProgressView.Net/)
+[![NuGet Downloads](https://img.shields.io/nuget/dt/Maui.CircularProgress.Net.svg)](https://www.nuget.org/packages/Control.MauiCircularProgressView.Net/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A beautiful, highly customizable circular progress bar control for .NET MAUI applications with multiple shape options, custom colors, and smooth rendering.
