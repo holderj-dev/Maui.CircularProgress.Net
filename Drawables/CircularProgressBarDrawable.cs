@@ -3,40 +3,28 @@ using Maui.CircularProgress.Net.Enums;
 
 namespace Maui.CircularProgress.Net.Drawables
 {
-    /// <summary>
-    /// Drawable class for rendering circular progress bars with multiple shape options
-    /// </summary>
     public class CircularProgressBarDrawable : BindableObject, IDrawable
     {
         #region Bindable Properties
 
         public static readonly BindableProperty ProgressProperty =
             BindableProperty.Create(nameof(Progress), typeof(int), typeof(CircularProgressBarDrawable), 0);
-
         public static readonly BindableProperty MaxProgressProperty =
             BindableProperty.Create(nameof(MaxProgress), typeof(int), typeof(CircularProgressBarDrawable), 100);
-
         public static readonly BindableProperty SizeProperty =
             BindableProperty.Create(nameof(Size), typeof(int), typeof(CircularProgressBarDrawable), 100);
-
         public static readonly BindableProperty ThicknessProperty =
             BindableProperty.Create(nameof(Thickness), typeof(int), typeof(CircularProgressBarDrawable), 10);
-
         public static readonly BindableProperty ProgressColorProperty =
             BindableProperty.Create(nameof(ProgressColor), typeof(Color), typeof(CircularProgressBarDrawable), Colors.Blue);
-
         public static readonly BindableProperty ProgressLeftColorProperty =
             BindableProperty.Create(nameof(ProgressLeftColor), typeof(Color), typeof(CircularProgressBarDrawable), Colors.LightGray);
-
         public static readonly BindableProperty TextColorProperty =
             BindableProperty.Create(nameof(TextColor), typeof(Color), typeof(CircularProgressBarDrawable), Colors.Black);
-
         public static readonly BindableProperty ShowTextProperty =
             BindableProperty.Create(nameof(ShowText), typeof(bool), typeof(CircularProgressBarDrawable), true);
-
         public static readonly BindableProperty ProgressEdgeShapeProperty =
             BindableProperty.Create(nameof(ProgressEdgeShape), typeof(LineCap), typeof(CircularProgressBarDrawable), LineCap.Butt);
-
         public static readonly BindableProperty ShapeProperty =
             BindableProperty.Create(nameof(Shape), typeof(ProgressBarShape), typeof(CircularProgressBarDrawable), ProgressBarShape.Circular);
 
@@ -44,90 +32,51 @@ namespace Maui.CircularProgress.Net.Drawables
 
         #region Properties
 
-        /// <summary>
-        /// Gets or sets the current progress value
-        /// </summary>
         public int Progress
         {
             get => (int)GetValue(ProgressProperty);
             set => SetValue(ProgressProperty, value);
         }
-
-        /// <summary>
-        /// Gets or sets the maximum progress value
-        /// </summary>
         public int MaxProgress
         {
             get => (int)GetValue(MaxProgressProperty);
             set => SetValue(MaxProgressProperty, value);
         }
-
-        /// <summary>
-        /// Gets or sets the size (diameter for circular/arch, width for flat)
-        /// </summary>
         public int Size
         {
             get => (int)GetValue(SizeProperty);
             set => SetValue(SizeProperty, value);
         }
-
-        /// <summary>
-        /// Gets or sets the thickness of the progress bar
-        /// </summary>
         public int Thickness
         {
             get => (int)GetValue(ThicknessProperty);
             set => SetValue(ThicknessProperty, value);
         }
-
-        /// <summary>
-        /// Gets or sets the color of the completed progress
-        /// </summary>
         public Color ProgressColor
         {
             get => (Color)GetValue(ProgressColorProperty);
             set => SetValue(ProgressColorProperty, value);
         }
-
-        /// <summary>
-        /// Gets or sets the color of the remaining progress
-        /// </summary>
         public Color ProgressLeftColor
         {
             get => (Color)GetValue(ProgressLeftColorProperty);
             set => SetValue(ProgressLeftColorProperty, value);
         }
-
-        /// <summary>
-        /// Gets or sets the color of the progress text
-        /// </summary>
         public Color TextColor
         {
             get => (Color)GetValue(TextColorProperty);
             set => SetValue(TextColorProperty, value);
         }
-
-        /// <summary>
-        /// Gets or sets whether to show the progress text
-        /// </summary>
         public bool ShowText
         {
             get => (bool)GetValue(ShowTextProperty);
             set => SetValue(ShowTextProperty, value);
         }
-
-        /// <summary>
-        /// Gets or sets the edge shape (Butt for flat, Round for rounded)
-        /// </summary>
         public LineCap ProgressEdgeShape
         {
             get => (LineCap)GetValue(ProgressEdgeShapeProperty);
             set => SetValue(ProgressEdgeShapeProperty, value);
         }
-
-        /// <summary>
-        /// Gets or sets the shape of the progress bar (Circular, Arch, or Flat)
-        /// </summary>
         public ProgressBarShape Shape
         {
             get => (ProgressBarShape)GetValue(ShapeProperty);
@@ -138,9 +87,6 @@ namespace Maui.CircularProgress.Net.Drawables
 
         #region Draw Method
 
-        /// <summary>
-        /// Draws the progress bar on the canvas
-        /// </summary>
         public void Draw(ICanvas canvas, RectF dirtyRect)
         {
             int clampedProgress = Math.Clamp(Progress, 0, MaxProgress);
@@ -164,9 +110,6 @@ namespace Maui.CircularProgress.Net.Drawables
 
         #region Private Drawing Methods
 
-        /// <summary>
-        /// Draws a circular (360°) progress bar
-        /// </summary>
         private void DrawCircular(ICanvas canvas, RectF dirtyRect, int clampedProgress, float percentage)
         {
             float effectiveSize = Size - Thickness;
@@ -177,13 +120,11 @@ namespace Maui.CircularProgress.Net.Drawables
             {
                 float angle = GetAngleCircular(percentage);
 
-                // Draw background circle (progress left)
                 canvas.StrokeColor = ProgressLeftColor;
                 canvas.StrokeSize = Thickness;
                 canvas.StrokeLineCap = ProgressEdgeShape;
                 canvas.DrawEllipse(x, y, effectiveSize, effectiveSize);
 
-                // Draw arc (progress done)
                 canvas.StrokeColor = ProgressColor;
                 canvas.StrokeSize = Thickness;
                 canvas.StrokeLineCap = ProgressEdgeShape;
@@ -191,14 +132,12 @@ namespace Maui.CircularProgress.Net.Drawables
             }
             else
             {
-                // Draw full circle when complete
                 canvas.StrokeColor = ProgressColor;
                 canvas.StrokeSize = Thickness;
                 canvas.StrokeLineCap = ProgressEdgeShape;
                 canvas.DrawEllipse(x, y, effectiveSize, effectiveSize);
             }
 
-            // Draw progress text
             if (ShowText)
             {
                 float fontSize = effectiveSize / 2.86f;
@@ -211,67 +150,56 @@ namespace Maui.CircularProgress.Net.Drawables
             }
         }
 
-        /// <summary>
-        /// Draws an arch (180° semi-circle) progress bar
-        /// </summary>
         private void DrawArch(ICanvas canvas, RectF dirtyRect, int clampedProgress, float percentage)
         {
             float effectiveSize = Size - Thickness;
             float x = Thickness / 2f;
             float y = Thickness / 2f;
+                      
+            float startAngle = 0f;
+            float maxSweep = 180f;
+            float progressSweep = maxSweep * (percentage / 100f);
 
-            // Arch goes from 180° to 0° (bottom-left to bottom-right)
-            float startAngle = 180;
-            float maxSweep = 180;
-            float sweepAngle = (percentage / 100f) * maxSweep;
-
-            // Draw background arch (full 180° from left to right at bottom)
+            // 1. Draw Background Track
             canvas.StrokeColor = ProgressLeftColor;
             canvas.StrokeSize = Thickness;
             canvas.StrokeLineCap = ProgressEdgeShape;
-            canvas.DrawArc(x, y, effectiveSize, effectiveSize, startAngle, maxSweep, true, false);
+            canvas.DrawArc(x, y, effectiveSize, effectiveSize, startAngle, maxSweep, false, false);
 
-            // Draw progress arch
+            // 2. Draw Progress Arc
             if (percentage > 0)
             {
                 canvas.StrokeColor = ProgressColor;
                 canvas.StrokeSize = Thickness;
                 canvas.StrokeLineCap = ProgressEdgeShape;
-                canvas.DrawArc(x, y, effectiveSize, effectiveSize, startAngle, sweepAngle, true, false);
+                canvas.DrawArc(x, y, effectiveSize, effectiveSize, startAngle, progressSweep, false, false);
             }
 
-            // Draw progress text (only if ShowText is true)
+            // 3. Draw Text
             if (ShowText)
             {
-                float fontSize = Size / 8f;
+                float fontSize = effectiveSize / 5f;
                 canvas.FontSize = fontSize;
                 canvas.FontColor = TextColor;
 
-                // Position text at the bottom center of the arch
-                float textY = Size - Thickness - (fontSize * 1.5f);
-                canvas.DrawString($"{clampedProgress}/{MaxProgress}",
-                    0, textY, Size, fontSize * 2,
+                // Position text in the center-bottom of the arch area
+                RectF textRect = new RectF(x, y + (effectiveSize / 4), effectiveSize, effectiveSize / 2);
+                canvas.DrawString($"{clampedProgress}/{MaxProgress}", textRect,
                     HorizontalAlignment.Center, VerticalAlignment.Center);
             }
         }
 
-        /// <summary>
-        /// Draws a flat (horizontal) progress bar
-        /// </summary>
         private void DrawFlat(ICanvas canvas, RectF dirtyRect, int clampedProgress, float percentage)
         {
             float width = Size;
             float height = Thickness;
             float x = 0;
-            float y = (Size - Thickness) / 2; // Center vertically
-
+            float y = (Size - Thickness) / 2;
             float cornerRadius = Thickness / 2;
 
-            // Draw background
             canvas.FillColor = ProgressLeftColor;
             canvas.FillRoundedRectangle(x, y, width, height, cornerRadius);
 
-            // Draw progress
             if (percentage > 0)
             {
                 float progressWidth = width * (percentage / 100);
@@ -279,7 +207,6 @@ namespace Maui.CircularProgress.Net.Drawables
                 canvas.FillRoundedRectangle(x, y, progressWidth, height, cornerRadius);
             }
 
-            // Draw progress text
             if (ShowText)
             {
                 float fontSize = height * 0.8f;
@@ -291,9 +218,6 @@ namespace Maui.CircularProgress.Net.Drawables
             }
         }
 
-        /// <summary>
-        /// Calculates the angle for circular progress based on percentage
-        /// </summary>
         private float GetAngleCircular(float percentage)
         {
             float factor = 90f / 25f;

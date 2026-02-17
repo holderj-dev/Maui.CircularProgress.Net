@@ -24,7 +24,7 @@
 		<!-- NuGet Package Metadata -->
 		<PackageId>Control.MauiCircularProgressView.Net</PackageId>
 		
-		<Version>1.0.0</Version>
+		<Version>1.0.1</Version>
 		<Authors>James Esil Holder</Authors>
 		<Company>James Esil Holder</Company>
 		<Product>Circular Progress Bar for .NET MAUI</Product>
@@ -44,9 +44,9 @@
 
 		<!-- Release Notes -->
 		<PackageReleaseNotes>
-			Initial release v1.0.0 featuring:
+			Arch Update release v1.0.1 featuring:
+			- ✅ Arch progress bar (180° semi-circle) for gauge-style displays 
 			- ✅ Circular progress bar (360°) starting from top, moving clockwise
-			- ✅ Arch progress bar (180° semi-circle) for gauge-style displays
 			- ✅ Flat horizontal progress bar with rounded corners
 			- ✅ Custom max progress values (not limited to 0-100 range)
 			- ✅ Customizable colors for progress, background, and text
