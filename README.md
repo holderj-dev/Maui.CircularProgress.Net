@@ -345,12 +345,6 @@ public void UpdateProgressColor(int progress)
 }
 ```
 
-## 📖 Documentation
-
-- [Complete Usage Examples](https://github.com/yourusername/Maui.CircularProgress.Net/blob/main/USAGE_EXAMPLES.md)
-- [API Reference](https://github.com/yourusername/Maui.CircularProgress.Net/wiki/API-Reference)
-- [Change Log](https://github.com/yourusername/Maui.CircularProgress.Net/blob/main/CHANGELOG.md)
-
 ## 🐛 Troubleshooting
 
 ### Progress bar not visible
